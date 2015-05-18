@@ -1,0 +1,64 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+// MLO colors
+$background-blue:				  #e4f0f2 !default;
+$light-blue: 					  #78bde4 !default;
+$blue: 					 		  #78bde4 !default;
+
+$stable: $light-blue;
+$tabs: $light-blue;
+$nav-tabs: $light-blue;
+
+
+$tabs-default-bg : $light-blue;
+
+@mixin tabs-striped-background($style, $color) {
+  &.#{$style} {
+    .tabs {
+      background-color: $color;
+      background-image:none;
+    }
+  }
+}
+
+
+
+
+    // doing this twice so striped tabs styles don't override specific bg and color vals
+  @include tabs-striped-background('tabs-background-light', $light-blue);
+  @include tabs-striped-background('tabs-background-stable', $light-blue);
+  @include tabs-striped-background('tabs-background-positive', $light-blue);
+  @include tabs-striped-background('tabs-background-calm', $light-blue);
+  @include tabs-striped-background('tabs-background-assertive', $light-blue);
+  @include tabs-striped-background('tabs-background-balanced', $light-blue);
+  @include tabs-striped-background('tabs-background-energized',$light-blue);
+  @include tabs-striped-background('tabs-background-royal', $light-blue);
+  @include tabs-striped-background('tabs-background-dark', $light-blue);
+
+
+
+
+
+
+
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
